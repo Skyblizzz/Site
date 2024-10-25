@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informática Aplicada</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007BFF;
+            text-align: center; 
+            padding: 20px 0; 
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white; 
+        }
+
+        main {
+            padding: 20px;
+            text-align: center; 
+        }
+
+        .imagem-capa {
+            max-width: 60%; 
+            height: auto; 
+            margin: 20px auto; 
+            display: block; 
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: white;
+        }
+
+        header p {
+            font-size: 1.2em;
+            color: white; 
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        section h2 {
+            color: #333;
+            border-bottom: 2px solid #007BFF;
+            padding-bottom: 10px;
+        }
+
+        section p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            background-color: #007BFF; 
+            color: white; 
+            padding: 10px 0; 
+        }
+
+        footer p a {
+            color: white; 
+            text-decoration: none;
+        }
+
+        footer section {
+            margin-bottom: 10px;
+        }
+
+        .noticia, .artigo {
+            margin: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #fff;
+            transition: background-color 0.3s;
+        }
+
+        .noticia:hover, .artigo:hover {
+            background-color: #f1f1f1;
+        }
+
+        .conteudo {
+            display: none;
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        .titulo {
+            cursor: pointer;
+            color: #007BFF;
+            text-decoration: underline;
+        }
+
+        footer a {
+            color: white; 
+            text-decoration: none;
+        }
+    </style>
+    <script>
+        function checkLogin() {
+            const loggedIn = localStorage.getItem('loggedIn');
+            if (loggedIn) {
+                document.getElementById('addLink').style.display = 'block';
+            }
+        }
+
+        function carregarConteudos() {
+            const artigos = JSON.parse(localStorage.getItem("artigos")) || [];
+            const noticias = JSON.parse(localStorage.getItem("noticias")) || [];
+
+            const listaArtigos = document.getElementById("listaArtigos");
+            const listaNoticias = document.getElementById("listaNoticias");
+
+
+            listaArtigos.innerHTML = "";
+            listaNoticias.innerHTML = "";
+
+
+            artigos.slice(-2).forEach(artigo => {
+                const item = document.createElement("li");
+                item.innerHTML = `<div class="artigo">
+                                    <h3 class="titulo" onclick="toggleConteudo(this)"> ${artigo.titulo} </h3>
+                                    <div class="conteudo">${artigo.conteudo}</div>
+                                 </div>`;
+                listaArtigos.appendChild(item);
+            });
+
+           
+            noticias.slice(-2).forEach(noticia => {
+                const item = document.createElement("li");
+                item.innerHTML = `<div class="noticia">
+                                    <h3 class="titulo" onclick="toggleConteudo(this)"> ${noticia.titulo} </h3>
+                                    <div class="conteudo">${noticia.conteudo}</div>
+                                 </div>`;
+                listaNoticias.appendChild(item);
+            });
+        }
+
+        function toggleConteudo(element) {
+            const conteudo = element.nextElementSibling;
+            conteudo.style.display = conteudo.style.display === "none" || conteudo.style.display === "" ? "block" : "none";
+        }
+
+        window.onload = function() {
+            checkLogin();
+            carregarConteudos();
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="Imagens/logo.png" alt="Logo do Site" id="logotipo"></a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="HTML/artigos.html">Artigos</a></li>
+                <li><a href="HTML/noticias.html">Notícias</a></li>
+                <li><a href="HTML/sobrenos.html">Sobre Nós</a></li>
+                <li><a href="HTML/faleconosco.html">Fale Conosco</a></li>
+                <li><a href="HTML/contactos.html">Contactos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <img src="Imagens/imagemcapa.jpg" alt="Imagem de Capa" class="imagem-capa">
+        <header>
+            <h1 style="color: gold">Bem-vindo ao MozIT</h1>
+            <p>O mundo da informática com artigos, notícias e muito mais!</p>
+        </header>
+
+        <style>
+            h3 {
+                color: gold;
+                cursor: pointer;
+                font-family: 'Arial', sans-serif;
+                border: 2px solid gold;
+                padding: 10px;
+                margin: 10px 0;
+                transition: color 0.3s, border-color 0.3s, transform 0.3s;
+            }
+        
+            h3:hover {
+                color: darkorange;
+                border-color: darkorange;
+                transform: scale(1.05); 
+            }
+        
+            .content {
+                display: none;
+                margin-top: 10px;
+            }
+        </style>
+        
+        <section>
+            <h2>Últimos Artigos</h2>
+            
+            <div class="news-article">
+                <h3 onclick="toggleContent('artigo1')">1. Inteligência Artificial e o Futuro da Tecnologia</h3>
+                <div id="artigo1" class="content">
+                    <p>A crescente automação de tarefas através de sistemas inteligentes está a redefinir o conceito de trabalho, permitindo que as pessoas se concentrem em tarefas mais complexas e criativas. No entanto, esta mudança também levanta preocupações sobre o impacto no emprego. Embora a IA tenha o potencial de criar novos postos de trabalho, muitos empregos repetitivos e baseados em rotinas podem ser substituídos por máquinas. Esta transição requer novas habilidades e uma força de trabalho adaptada às exigências de um futuro digital.</p>
+
+    <p>Além de otimizar operações empresariais, a IA está a impactar a vida quotidiana dos indivíduos. Através de assistentes virtuais, recomendação de produtos e personalização de serviços, a tecnologia está cada vez mais presente no quotidiano. Empresas como Google, Amazon e Apple estão a integrar IA em dispositivos domésticos, criando experiências mais conectadas e inteligentes para os utilizadores.</p>
+
+    <p>No entanto, à medida que a IA continua a expandir-se, surgem questões éticas e desafios regulatórios. A privacidade dos dados, a transparência dos algoritmos e o impacto sobre a sociedade são tópicos de debate à medida que a tecnologia avança. A criação de políticas robustas que equilibrem inovação com proteção ao consumidor será fundamental para garantir que a IA traga benefícios para todos.</p>
+
+    <p>Fontes: 
+        <a href="https://www.forbes.com/sites/bernardmarr/2024/01/15/how-ai-is-transforming-the-global-economy/">Forbes</a>, 
+        <a href="https://www.gartner.com/en/newsroom/press-releases/2024-02-15-gartner-says-ai-will-generate-9-trillion-dollars-in-value-by-2030">Gartner</a>
+    </p>
+</div>
+            </div>
+        
+            <div class="news-article">
+                <h3 onclick="toggleContent('artigo2')">2. Cibersegurança em 2024: Principais Tendências</h3>
+                <div id="artigo2" class="content">
+                    <p>A cibersegurança está a tornar-se uma preocupação primordial à medida que o número de ataques cibernéticos continua a aumentar. Em 2024, espera-se que as principais tendências incluam a implementação de inteligência artificial para detectar e responder a ameaças em tempo real. Com a crescente complexidade das redes e a evolução das técnicas de ataque, soluções automatizadas são essenciais para proteger as informações e sistemas das organizações.</p>
+                    
+                    <p>Além disso, a segurança em nuvem e a proteção de dados pessoais ganharão maior atenção, com regulamentações mais rigorosas a serem implementadas em diversas regiões. A conformidade com normas como a GDPR na Europa e a LGPD no Brasil está a forçar as empresas a adotar práticas de segurança mais robustas. Isso inclui a realização de auditorias regulares, formações de conscientização para colaboradores e a implementação de medidas técnicas de segurança para proteger dados sensíveis.</p>
+                    
+                    <p>À medida que os dispositivos IoT se tornam mais comuns, também haverá um foco na segurança destes dispositivos, que frequentemente são alvos fáceis para hackers. A falta de padrões de segurança e a diversidade de fabricantes tornam a proteção destes dispositivos um desafio significativo. As empresas precisam trabalhar em colaboração com fornecedores para garantir que as medidas de segurança sejam integradas desde o início do processo de design.</p>
+                    
+                    <p>Por fim, a formação contínua e a sensibilização em cibersegurança serão cruciais para garantir que todos na organização estejam cientes dos riscos e saibam como mitigá-los. À medida que novas ameaças emergem, o treino regular pode ajudar a criar uma cultura de segurança cibernética e reduzir a probabilidade de falhas humanas. Assim, a cibersegurança não é apenas uma responsabilidade técnica, mas uma questão que envolve todos os membros da organização.</p>
+                    
+                    <p>Fontes: 
+                        <a href="https://www.forbes.com/sites/bernardmarr/2024/01/10/the-top-cybersecurity-trends-in-2024/">Forbes</a>, 
+                        <a href="https://www.cybersecurityinsiders.com/top-cybersecurity-trends-in-2024/">Cybersecurity Insiders</a>
+                    </p></div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Últimas Notícias</h2>
+            
+            <div class="news-item">
+                <h3 onclick="toggleContent('noticia1')">1. Apple Lança Atualização Significativa para o macOS Ventura</h3>
+                <div id="noticia1" class="content">
+                    <p>A Apple lançou uma atualização importante para o macOS Ventura, que traz melhorias significativas na segurança e na estabilidade do sistema...</p>
+                    <p>A Apple lançou uma atualização importante para o macOS Ventura, que traz melhorias significativas na segurança e na estabilidade do sistema. Entre as novas funcionalidades estão ajustes na privacidade dos usuários, além de correções de bugs que impactavam o desempenho de vários aplicativos. Essa atualização é uma resposta às críticas anteriores sobre a necessidade de um sistema mais seguro e confiável.</p>
+                    <p>Os usuários do macOS Ventura agora podem aproveitar um novo conjunto de opções de privacidade que lhes permite gerenciar melhor como seus dados são coletados e usados. Isso inclui a capacidade de desativar rastreadores em aplicativos e navegadores, proporcionando uma camada extra de proteção. A Apple continua a enfatizar sua posição de defender a privacidade do usuário em um ambiente digital cada vez mais desafiador.</p>
+                    <p>Além disso, a atualização traz melhorias de desempenho, especialmente para aplicativos que exigem maior poder de processamento, como editores de vídeo e softwares de design gráfico. A Apple afirma que essas melhorias visam não apenas otimizar a experiência do usuário, mas também garantir que o sistema funcione de maneira mais suave e eficiente, mesmo em dispositivos mais antigos.</p>
+                    <p><strong>Fonte:</strong> <a href="https://www.theverge.com/2023/10/19/apple-macos-ventura-update" target="_blank">The Verge</a></p>
+            </div>
+        
+            <div class="news-item">
+                <h3 onclick="toggleContent('noticia2')">2. Google Chrome Introduz Novos Recursos para Melhorar a Experiência do Usuário</h3>
+                <div id="noticia2" class="content">
+                    <p>O Google Chrome lançou uma série de novos recursos que visam melhorar a experiência do usuário. Entre as novidades, destaca-se um gerenciador de senhas integrado...</p>
+                    <p>O Google Chrome, um dos navegadores mais populares do mundo, lançou uma série de novos recursos que visam melhorar a experiência do usuário. Entre as novidades, destaca-se um gerenciador de senhas integrado que facilita o armazenamento e a recuperação de senhas, garantindo que os usuários tenham acesso fácil às suas contas sem comprometer a segurança.</p>
+                    <p>Outra adição importante é a melhoria nas configurações de privacidade, que agora permitem um controle mais granular sobre como os dados são utilizados e compartilhados. Isso inclui a possibilidade de bloquear cookies de terceiros e gerenciar as permissões de rastreamento de forma mais eficiente, refletindo a crescente preocupação com a privacidade online.</p>
+                    <p>Essas mudanças fazem parte de um esforço contínuo do Google para manter o Chrome competitivo e seguro em um mercado onde os usuários estão cada vez mais conscientes da importância da proteção de dados. A empresa também prometeu lançar atualizações regulares para garantir que o navegador se mantenha na vanguarda da segurança e da usabilidade.</p>
+                    <p><strong>Fonte:</strong> <a href="https://www.cnbc.com/2023/10/21/google-chrome-new-features.html" target="_blank">CNBC</a></p>
+                    
+            </div>
+                </div>
+            </div>
+        </section>
+        
+        <script>
+            function toggleContent(id) {
+                const content = document.getElementById(id);
+                if (content.style.display === "none" || content.style.display === "") {
+                    content.style.display = "block";
+                } else {
+                    content.style.display = "none";
+                }
+            }
+        </script>
+        
+
+        <section>
+            <h2 style="color: gold">Sobre Nós</h2>
+            <p style="color: rgb(00, 00, 255);">
+                Este site foi criado e mantido por alunos do curso de Informática Aplicada da Universidade Pedagógica de Maputo. Nossa missão é compartilhar conhecimento e atualizações sobre o vasto mundo da tecnologia da informação.
+            </p>
+        </section>
+
+        <section>
+            <h2 style="color: gold">Entre em Contato</h2>
+            <p>
+                Tem alguma dúvida ou sugestão? <a href="HTML/faleconosco.html" style="color: #007BFF; text-decoration: none;">Fale conosco!</a>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+
+        <p><a href="html/politicas_privacidade.html">Políticas e Privacidade</a></p>
+        <p><a href="html/termos_uso.html">Termos de uso</a></p>
+        <p><a href="">Anuncie aqui</a></p>
+        <p>Copyright &copy; 2024 <a href="../index.html">MozIT</a> Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fale Conosco - Informática Aplicada</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <style>
+        
+        form {
+            background-color: #ffffff;
+            border: 1px solid #007BFF;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        label {
+            color: #007BFF;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 6px;
+            margin: 5px 0 10px;
+            border: 2px solid #007BFF;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #333;
+        }
+        input[type="submit"],
+        input[type="button"] {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 6px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover,
+        input[type="button"]:hover {
+            background-color: #0056b3;
+        }
+        textarea {
+            resize: vertical;
+            height: 60px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html"><img src="../imagens/logo.png" alt="Logo do Site" id="logotipo"></a>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="artigos.html">Artigos</a></li>
+                <li><a href="noticias.html">Notícias</a></li>
+                <li><a href="sobrenos.html">Sobre Nós</a></li>
+                <li><a href="faleconosco.html">Fale Conosco</a></li>
+                <li><a href="contactos.html">Contactos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main >
+        <h1 style="color: gold">Contacte-nos</h1>
+        <form>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome">
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email">
+
+            <label for="assunto">Assunto:</label>
+            <input type="text" id="assunto" name="assunto">
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem"></textarea>
+
+            <input type="submit" value="Enviar">
+            <input type="button" value="Limpar" onclick="document.querySelector('form').reset();">
+        </form>
+    </main>
+
+    <footer>
+        <p><a href="politicas_privacidade.html">Políticas e Privacidades</a></p>
+        <p><a href="termos_uso.html">Termos de uso</a></p>
+        <p><a href="">Anuncie aqui</a></p>
+        <p>Copyright &copy; 2024 <a href="../index.html">MozIT</a> Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="../JavaScript/javascript.js"></script>
+</body>
+</html>

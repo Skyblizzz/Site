@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notícias - Informática Aplicada</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007BFF; 
+            padding: 30px;
+            text-align: center;
+        }
+
+        header img {
+            max-width: 150px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center; 
+        }
+
+        h1 {
+            color: gold;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .noticia {
+            display: none; 
+            margin: 20px auto; 
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            background-color: #fff;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+            width: 80%; 
+        }
+
+        .noticia:hover {
+            transform: scale(1.02);
+        }
+
+        .noticia h3 {
+            cursor: pointer;
+            color: gold;
+            font-size: 1.5rem;
+            margin: 0;
+            padding: 10px 0;
+            font-family: 'Georgia', serif;
+            border-bottom: 1px solid #e0e0e0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+            transition: color 0.3s ease;
+        }
+
+        .noticia h3:hover {
+            color: #d4af37;
+        }
+
+        .noticia p {
+            display: none; 
+            font-size: 1rem;
+            color: #555;
+            padding-top: 10px;
+        }
+
+        #verMais {
+            display: block;
+            margin: 20px auto;
+            padding: 12px 30px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #verMais:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            background-color: #007BFF; 
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        footer a {
+            color: white; 
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html"><img src="../imagens/logo.png" alt="Logo do Site" id="logotipo"></a>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="artigos.html">Artigos</a></li>
+                <li><a href="noticias.html">Notícias</a></li>
+                <li><a href="sobrenos.html">Sobre Nós</a></li>
+                <li><a href="faleconosco.html">Fale Conosco</a></li>
+                <li><a href="contactos.html">Contactos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Noticias</h1>
+        <div class="noticias">
+            <div class="noticia">
+                <img src="https://www.theverge.com/2023/10/19/apple-macos-ventura-update" alt="Atualização do macOS da Apple">
+                <h3>1. Apple Lança Atualização Significativa para o macOS Ventura</h3>
+                <p>A Apple lançou uma atualização importante para o macOS Ventura, que traz melhorias significativas na segurança e na estabilidade do sistema. Entre as novas funcionalidades estão ajustes na privacidade dos usuários, além de correções de bugs que impactavam o desempenho de vários aplicativos. Essa atualização é uma resposta às críticas anteriores sobre a necessidade de um sistema mais seguro e confiável.</p>
+                <p>Os usuários do macOS Ventura agora podem aproveitar um novo conjunto de opções de privacidade que lhes permite gerenciar melhor como seus dados são coletados e usados. Isso inclui a capacidade de desativar rastreadores em aplicativos e navegadores, proporcionando uma camada extra de proteção. A Apple continua a enfatizar sua posição de defender a privacidade do usuário em um ambiente digital cada vez mais desafiador.</p>
+                <p>Além disso, a atualização traz melhorias de desempenho, especialmente para aplicativos que exigem maior poder de processamento, como editores de vídeo e softwares de design gráfico. A Apple afirma que essas melhorias visam não apenas otimizar a experiência do usuário, mas também garantir que o sistema funcione de maneira mais suave e eficiente, mesmo em dispositivos mais antigos.</p>
+                <p class="fonte">Fonte: <a href="https://www.theverge.com/2023/10/19/apple-macos-ventura-update" target="_blank">The Verge</a></p>
+            </div>
+            <div class="noticia">
+                <img src="https://www.cnbc.com/2023/10/21/google-chrome-new-features.html" alt="Novos Recursos do Google Chrome">
+                <h3>2. Google Chrome Introduz Novos Recursos para Melhorar a Experiência do Usuário</h3>
+                <p>O Google Chrome, um dos navegadores mais populares do mundo, lançou uma série de novos recursos que visam melhorar a experiência do usuário. Entre as novidades, destaca-se um gerenciador de senhas integrado que facilita o armazenamento e a recuperação de senhas, garantindo que os usuários tenham acesso fácil às suas contas sem comprometer a segurança.</p>
+                <p>Outra adição importante é a melhoria nas configurações de privacidade, que agora permitem um controle mais granular sobre como os dados são utilizados e compartilhados. Isso inclui a possibilidade de bloquear cookies de terceiros e gerenciar as permissões de rastreamento de forma mais eficiente, refletindo a crescente preocupação com a privacidade online.</p>
+                <p>Essas mudanças fazem parte de um esforço contínuo do Google para manter o Chrome competitivo e seguro em um mercado onde os usuários estão cada vez mais conscientes da importância da proteção de dados. A empresa também prometeu lançar atualizações regulares para garantir que o navegador se mantenha na vanguarda da segurança e da usabilidade.</p>
+                <p class="fonte">Fonte: <a href="https://www.cnbc.com/2023/10/21/google-chrome-new-features.html" target="_blank">CNBC</a></p>
+            </div>
+            <div class="noticia">
+                <img src="https://www.bbc.com/news/technology-67271278" alt="Brecha de Segurança">
+                <h3>3. Grande Brecha de Segurança Afeta Milhões de Usuários</h3>
+                <p>Uma recente brecha de segurança expôs as informações pessoais de milhões de usuários em todo o mundo, gerando preocupações sobre a segurança digital. O incidente, que envolveu uma empresa de tecnologia de renome, levanta questões sobre a eficácia das práticas de segurança atualmente adotadas por empresas que lidam com grandes volumes de dados pessoais.</p>
+                <p>Especialistas em segurança cibernética alertam que essa brecha destaca a necessidade urgente de práticas de segurança mais robustas, não apenas em empresas de tecnologia, mas em todos os setores. A proteção de dados se tornou uma prioridade fundamental, e as empresas devem investir em tecnologias que possam prevenir tais incidentes no futuro.</p>
+                <p>A situação também gera um debate sobre a responsabilidade das empresas em proteger as informações de seus clientes. Com a crescente frequência de ataques cibernéticos, os consumidores estão exigindo mais transparência e medidas de segurança eficazes para proteger suas informações pessoais e financeiras.</p>
+                <p class="fonte">Fonte: <a href="https://www.bbc.com/news/technology-67271278" target="_blank">BBC News</a></p>
+            </div>
+            <div class="noticia">
+                <img src="https://www.techcrunch.com/2023/10/20/microsoft-ai-tools-update" alt="Recursos de IA da Microsoft">
+                <h3>4. Microsoft Expande Ferramentas de IA em Sua Suíte Office</h3>
+                <p>A Microsoft anunciou a expansão de suas capacidades de inteligência artificial em sua suíte Office, introduzindo novos recursos projetados para aumentar a produtividade e otimizar fluxos de trabalho. As ferramentas de IA agora disponíveis em aplicativos como Word e Excel são voltadas para auxiliar os usuários na análise de dados e na criação de conteúdo.</p>
+                <p>Esses recursos incluem sugestões de escrita inteligentes que ajudam os usuários a melhorar a clareza e a eficácia de seus documentos, além de análises automáticas que podem identificar tendências em conjuntos de dados complexos. A Microsoft busca facilitar o trabalho dos usuários, permitindo que eles se concentrem em tarefas mais criativas e estratégicas.</p>
+                <p>Com a crescente adoção de tecnologia de IA em ambientes de trabalho, a Microsoft se posiciona como uma líder na integração dessas ferramentas em soluções de software amplamente utilizadas. A empresa acredita que a inteligência artificial não apenas aumentará a eficiência, mas também transformará a forma como as pessoas trabalham diariamente.</p>
+                <p class="fonte">Fonte: <a href="https://www.techcrunch.com/2023/10/20/microsoft-ai-tools-update" target="_blank">TechCrunch</a></p>
+            </div>
+            <div class="noticia">
+                <img src="https://www.forbes.com/sites/forbestechcouncil/2023/10/22/amazon-sustainability-initiatives" alt="Iniciativas de Sustentabilidade da Amazon">
+                <h3>5. Amazon Revela Novas Iniciativas de Sustentabilidade</h3>
+                <p>A Amazon anunciou uma série de novas iniciativas de sustentabilidade com o objetivo de reduzir sua pegada de carbono e promover práticas ecológicas em sua cadeia de suprimentos. Essas iniciativas incluem investimentos em energia renovável e soluções de embalagem mais sustentáveis, visando melhorar a eficiência ambiental das operações da empresa.</p>
+                <p>A gigante do comércio eletrônico está comprometida em tornar suas operações mais verdes, e esse movimento reflete uma tendência crescente entre grandes empresas que buscam se alinhar com os valores de consumidores cada vez mais conscientes do meio ambiente. As novas políticas visam não apenas mitigar o impacto ambiental da Amazon, mas também inspirar outras empresas a adotarem práticas semelhantes.</p>
+                <p>Com essas medidas, a Amazon espera ser um exemplo a ser seguido no setor e contribuir para um futuro mais sustentável, ao mesmo tempo em que atende às demandas dos consumidores por maior responsabilidade ambiental.</p>
+                <p class="fonte">Fonte: <a href="https://www.forbes.com/sites/forbestechcouncil/2023/10/22/amazon-sustainability-initiatives" target="_blank">Forbes</a></p>
+            </div>
+            <div class="noticia">
+                <img src="https://www.reuters.com/technology/apple-iphone-15-pro-features-2023-10-23" alt="iPhone 15 Pro">
+                <h3>6. iPhone 15 Pro Apresenta Novos Recursos Revolucionários</h3>
+                <p>A Apple lançou o iPhone 15 Pro, que vem com uma série de novos recursos que prometem revolucionar a experiência do usuário. Com um design mais leve e robusto, o dispositivo também traz melhorias significativas na câmera, incluindo recursos de fotografia avançada e captura de vídeo em alta definição.</p>
+                <p>Os usuários também poderão se beneficiar de uma nova funcionalidade que permite a personalização de atalhos para aplicativos frequentes, tornando o uso diário mais eficiente. O iPhone 15 Pro é alimentado pelo novo chip A17, que oferece um desempenho sem precedentes em termos de velocidade e eficiência energética.</p>
+                <p>A Apple continua a liderar a indústria de smartphones, e o iPhone 15 Pro é uma prova de seu compromisso em fornecer inovação e qualidade superior aos seus usuários, reforçando a posição da marca como um ícone de tecnologia moderna.</p>
+                <p class="fonte">Fonte: <a href="https://www.reuters.com/technology/apple-iphone-15-pro-features-2023-10-23" target="_blank">Reuters</a></p>
+            </div>
+            <div class="noticia">
+                <img src="https://www.bloomberg.com/news/articles/2023-10-24/facebook-meta-ai-tools" alt="Ferramentas de IA da Meta">
+                <h3>7. Meta Introduz Novas Ferramentas de IA para Criadores de Conteúdo</h3>
+                <p>A Meta, empresa-mãe do Facebook e Instagram, lançou novas ferramentas de inteligência artificial que visam facilitar a criação de conteúdo para seus usuários. Essas ferramentas são projetadas para ajudar os criadores a otimizar seu alcance e engajamento, oferecendo recomendações personalizadas com base nas preferências do público.</p>
+                <p>Os recursos incluem análises avançadas que permitem que os criadores entendam melhor o comportamento de seu público e ajustem seu conteúdo de acordo. A Meta também está investindo em tecnologia de IA que pode gerar sugestões de conteúdo e imagens, tornando a criação mais acessível e eficiente.</p>
+                <p>Essa iniciativa é parte da estratégia da Meta para aumentar a competitividade de suas plataformas e garantir que os criadores tenham as melhores ferramentas à sua disposição para se destacar em um mercado digital saturado.</p>
+                <p class="fonte">Fonte: <a href="https://www.bloomberg.com/news/articles/2023-10-24/facebook-meta-ai-tools" target="_blank">Bloomberg</a></p>
+            </div>
+        </div>
+        
+        <button id="verMais">Ver Mais</button>
+    </main>
+
+    <footer>
+        <p><a href="politicas_privacidade.html">Políticas e Privacidade</a></p>
+        <p><a href="termos_uso.html">Termos de uso</a></p>
+        <p><a href="">Anuncie aqui</a></p>
+        <p>Copyright &copy; 2024 <a href="../index.html">MozIT</a> Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const noticias = document.querySelectorAll('.noticia');
+            const verMaisBtn = document.getElementById('verMais');
+            let noticiasVisiveis = 3;
+    
+            for (let i = 0; i < noticiasVisiveis; i++) {
+                if (noticias[i]) {
+                    noticias[i].style.display = 'block';
+                }
+            }
+    
+            verMaisBtn.addEventListener('click', () => {
+                noticiasVisiveis += 3;
+                for (let i = 0; i < noticiasVisiveis; i++) {
+                    if (noticias[i]) {
+                        noticias[i].style.display = 'block';
+                    }
+                }
+                if (noticiasVisiveis >= noticias.length) {
+                    verMaisBtn.style.display = 'none'; 
+                }
+            });
+    
+            noticias.forEach(noticia => {
+                const titulo = noticia.querySelector('h3');
+                const conteudos = noticia.querySelectorAll('p'); 
+                titulo.addEventListener('click', () => {
+
+                    conteudos.forEach(conteudo => {
+                        const isVisible = conteudo.style.display === 'block';
+                        conteudo.style.display = isVisible ? 'none' : 'block';
+                    });
+                });
+            });
+        });
+    </script>
+    
+</body>
+</html>
